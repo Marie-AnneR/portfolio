@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Marie-Anne ROTH - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="desktop-nav">
+        <ul>
+          <a href="#start"><li>Marie-Anne Roth</li></a>
+          <a href="#about"><li>A Propos</li></a>
+          <a href="#formation"><li>Formation</li></a>
+          <a href="#work"><li>Expériences Professionnelles</li></a>
+          <a href="#projets"><li>Projets</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+      </nav>
+      <!-- Sidenav HTML -->
+      <div id="mySidenav" class="sidenav">
+	<a id="closeBtn" href="#" class="close">×</a>
+	<ul>
+          <a href="#start"><li>Marie-Anne Roth</li></a>
+          <a href="#about"><li>A Propos</li></a>
+          <a href="#formation"><li>Formation</li></a>
+          <a href="#work"><li>Expériences Professionnelles</li></a>
+          <a href="#projets"><li>Projets</li></a>
+          <a href="#contact"><li>Contact</li></a>
+	</ul>
+      </div>
+      
+      <!-- Burger Icon HTML -->
+      <a href="#" id="openBtn" class="burger-icon">
+	<span></span>
+	<span></span>
+	<span></span>
+      </a>
+      
+      <!-- JavaScript -->
+      <script>
+	var sidenav = document.getElementById("mySidenav");
+	var openBtn = document.getElementById("openBtn");
+	var closeBtn = document.getElementById("closeBtn");
+	
+	openBtn.onclick = openNav;
+	closeBtn.onclick = closeNav;
+	
+	function openNav() {
+            sidenav.classList.add("active");
+            document.body.style.overflow = 'hidden';
+            openBtn.style.display = 'none'; // Hide burger icon
+	}
+	
+	function closeNav() {
+            sidenav.classList.remove("active");
+            document.body.style.overflow = 'auto';
+            openBtn.style.display = 'block'; // Show burger icon
+	}
+
+	var sidenavLinks = sidenav.querySelectorAll("a");
+	sidenavLinks.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+		event.preventDefault();
+		var targetId = this.getAttribute("href").substring(1);
+		var targetElement = document.getElementById(targetId);
+		if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+		}
+		closeNav();
+            });
+	});
+      </script>
+    </header>
+    <section class="start" id="start">
+      <img class="welcome-img" src="./media/welcome.png" alt="message de bienvenue sur mon portfolio">
+      <div class="img-text-typing ">
+        <div class="text-typing">
+          <h2>Bonjour, bienvenue sur mon portfolio!</h2>
+        </div>
+      </div>        
+      <div>
+        <a href="#about"><button>Commencer</button></a>
+        <a href="#contact" ><button class="btn-contact">Contact</button></a>
+      </div>
+      
+    </section>
+    <section class="about" id="about">
+      <h2>à propos</h2><!--Stats and skills-->
+      <div class="container">
+        <div class="div-profilePic">
+          <img src="./media/profile.png" width="200px" height="200px" class="profilePic"/>
+        </div>
+        <div class="profile">
+          <p>Titulaire d'un Bachelor Manager de projets web, spécialisation marketing digital, j’ai accumulé plus de 4 ans d'expériences dans la communication, la gestion de projet et le marketing digital.</p>
+          <p>J’ai repris mes études à EPITECH pour me reconvertir en tant qu’Experte en Management des systèmes d'information. Pour réussir ce master, je recherche une alternance de 2 ans et demi pour mettre à profit mes nouvelles compétences dans un environnement professionnel.<br><br>
+            <a href="https://www.dropbox.com/scl/fi/m6sqbfdebb18p2mr14u0h/CV-ROTH-MARIE-ANNE-ALTERNANCE.pdf?rlkey=3rovpwxg4kx43kqf3zlkgorjq&st=xgp4ptc3&dl=0" target="_blank"><span><b>> Accéder à mon CV</b></span></a></p>
+          <h3>Mes points forts</h3>
+          <p class="softskills"><span class="tags">#Communication</span> <span class="tags">#TravailEnEquipe</span> <span class="tags">#RésolutionDeProblème</span> <span class="tags">#Adaptabilité</span></p>
+        </div>
+      </div>
+      <hr>
+      <h2>compétences</h2>
+      <div class="container skills">
+        <div class="card">
+          <h3>Dévelopment</h3>
+          <ul>
+            <li>Python</li>
+            <li>Intégration Web HTML/CSS</li>
+            <li>Notions de PHP et JS</li>
+            <li>Et encore plus à venir...</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Design</h3>
+          <ul>
+            <li>Montage et retouche photos</li>
+            <li>Créations <dfn><abbr title="Publication Assistée par Ordinateur">PAO</abbr></dfn></li>
+            <li>Sous-titrage et montage vidéo</li>
+            <li>Création de maquettes pour site web et applications mobiles</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Marketing</h3>
+          <ul>
+            <li>Rédaction et optimisation de contenus pour le Web</li>
+            <li>Audit SEO/SEA</li>
+            <li>Campagnes publicitaires Google Ads et réseaux sociaux</li>
+            <li>Suivi de performance des campagnes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="formation" id="formation">
+      <h2>Formation</h2>
+      <div class="container">
+        <div class="card">            
+          <h3>Master Expert en management de systèmes d'information</h3>
+          <h4>Epitech, Marseille | 2024 - 2027 </h4>
+          <p>Epitech, l’école de l’excellence informatique forme depuis 25 ans les experts de la tech qui façonneront le monde de demain.</p>
+          <a href="https://epitech.eu/"><button>Voir le site</button></a>
+        </div>
+        <div class="card">            
+          <h3>Bachelor Manager de Projets Web spécialité Web sMarketing</h3>
+          <h4>Epitech Digital, Paris | 2017 - 2020</h4>
+          <p>L’école dispense une formation professionnalisante, avec une orientation sur des compétences techniques en Web Design, Web Marketing et Web Développement.</p>
+          <a href="https://www.epitech.digital/campus/grande-ecole-du-digital-paris/"><button>Voir le site</button></a>
+        </div>
+        <div class="card">            
+          <h3>BTS Tourisme</h3>
+          <h4>MFR Olonnes - Atlantic, Sables d'Olonne (85) | 2013 - 2015</h4>
+          <p>Olonnes - Atlantic est la plus jeune des 27 MFR de Vendée. Elle forme, par alternance, des jeunes de la 3ème au BTS dans les secteurs de la Vente et du Tourisme.</p>
+          <a href="https://www.mfr-sables-olonne.com/"><button>Voir le site</button></a>
+        </div>
+      </div>
+    </section>
+    <section id="work" class="work">
+      <h2>expérience<br>professionnelle</h2>
+      <div class="container">
+        <div class="card">            
+          <h3>Chargée de Web Marketing</h3>
+          <h4>AFPOLS, Paris (75) | Septembre 2019 à Août 2024</h4>
+          <p><i>L'AFPOLS est une Association pour la formation professionnelle continue des organismes de logement social. Elle propose plus de 300 formations ciblées sur l’actualité des métiers du logement social.</i></p>
+          <ul>
+            <li>Gestion des réseaux sociaux de l’entreprise</li>
+            <li>Intégration HTML/CSS et optimisation de contenus pour le référencement naturel du site.</li>
+            <li>Envoi d'emails commerciaux via Pardot (Salesforce)</li>
+            <li>Création de campagne digitale sur Google Ads et Suivi analytique via Google Analytics et Pardot</li>
+            <li>Productions graphiques : Illustrations, montages vidéo, sous-titrage et retouche photos</li>
+          </ul>
+          <a href="https://www.afpols.fr/"><button>Voir le site</button></a>
+        </div>
+        <div class="card">            
+          <h3>Chargée de Web Marketing</h3>
+          <h4>MyBizDev, Paris (75) | Février 2019 - Septembre 2019</h4>
+          <p><i>Mybizdev sélectionne et forme des Business Developers performants pour un poste immédiat en CDI ou en freelance sur Paris.</i></p>
+          <ul>
+            <li>Création et gestion des réseaux sociaux de l’entreprise</li>
+            <li>Intégration HTML/CSS et optimisation de contenus pour le référencement naturel du site.</li>
+            <li>Création de campagne digitale sur Facebook Ads</li>
+            <li>Suivi analytique via Google Analytics et Hubspot</li>
+            <li>Productions graphiques : Montage vidéos, sous-titrage et retouche photos</li>
+          </ul>
+          <a href="https://my-bizdev.io/"><button>Voir le site</button></a>
+        </div>
+        <div class="card">            
+          <h3>Community Manager</h3>
+          <h4>Ghost Frog, Montreuil (93) | Juin 2018 - Septembre 2018</h4>
+          <p><i>Société de création de produits ludiques et culturels sur tous supports y compris informatiques, physiques, sonores et/ou vidéo,&nbsp;...</i></p>
+          <ul>
+            <li>Création et gestion des réseaux sociaux de l’entreprise</li>
+            <li>Lancement et animation de communauté pour le jeu vidéo ETHERUSH</li>
+            <li>Intégration HTML/CSS</li>
+            <li>Création graphiques : montage vidéos, retouche et montage photos</li>
+            <li>Traduction anglaise et mise à jour du site avec GitBucket.</li>
+          </ul>
+          <a href="https://web.archive.org/web/20211128060642/https://ghostfrog.net/"><button>Voir le site (web archive)</button></a>
+        </div>
+      </div>
+    </section>
+    <section class="projets" id="projets">
+      <h2>Projets</h2>
+      <div class="container">
+        <div class="card">
+          <h3>Python: Hangman Game</h3>
+          <img class ="img-projets" src="./media/hangman.png" height="200px" alt="une capture d'écran présentant l'interface du jeu du pendu que j'ai développé en python.">
+          <p>En 10 jours de Python à Epitech, voici un aperçu du jeu du pendu que j'ai pu développer.</p>
+        </div>
+        <div class="resetti"><img src="./media/Resetti_AmF.png" alt="illustration de resetti" height="300px"></div>
+        
+        <div class="card">
+          <h3>Ancient Projets</h3>
+          <img class ="img-projets" src="./media/nokia.png" height="200px" alt="un aperçu de mon rendu sur un projet de refonte de page Elementor sur Wordpress">
+          <p>Avant Epitech, j'ai pu réaliser différents projets notamment la refonte d'une page de nokia 3310 avec Elementor sur Wordpress.</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <div class="box">
+        <img src="./media/Isabelle_NH.png" alt="illustration d'Isabelle de animal crossing" width="100px">
+        <div class="bloc-contact-left">
+          <p>Je suis disponible tous les jours en semaine avant 9h30 et après 17h30, ainsi que pendant le Week-end.</p>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="post">
+          <div class="">
+            <input type="hidden" name="access_key" value="89441aa8-dc4d-4a8b-9417-52a49e7d4ede">
+            <label for="name">
+              <input type="text" id="name" name="name" placeholder="Votre Nom et Prénom" required>
+            </label>
+            <label for="email">
+              <input type="email" id="email" name="email" placeholder="Votre adresse mail" required>
+            </label>
+            <label for="message">
+              <textarea name="message" id="message" placeholder="Votre message:" required></textarea>
+            </label>   
+          </div>
+          <label for="submit" class="submit">
+            <button type="submit" id="submit">envoyer</button>
+          </label>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p>Fait avec ❤️ par Marie-Anne ROTH</p>
+    </footer>
+  </body>
+</html>
